@@ -182,12 +182,24 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
 
+<!-- Nuevo campo de teléfono agregado -->
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" required>
+
     <label for="fecha">Fecha de nacimiento:</label>
     <input type="date" id="fecha" name="fecha" min="1900-01-01" max="2026-12-31" required>
 
     <label for="pais">País de residencia:</label>
     <select id="pais" name="pais" required>
       <option value="">Seleccione...</option>
+      <!-- nuevo campo de genero agregado -->
+       <label for="genero">Género:</label>
+      <select id="genero" name="genero"></select>
+      <opcion value="">Seleccione...</option>
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+
       <option value="argentina">Argentina</option>
       <option value="chile">Chile</option>
       <option value="mexico">México</option>

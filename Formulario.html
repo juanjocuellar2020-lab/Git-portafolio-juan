@@ -192,14 +192,6 @@
     <label for="pais">País de residencia:</label>
     <select id="pais" name="pais" required>
       <option value="">Seleccione...</option>
-      <!-- nuevo campo de genero agregado -->
-       <label for="genero">Género:</label>
-      <select id="genero" name="genero"></select>
-      <opcion value="">Seleccione...</option>
-      <option value="masculino">Masculino</option>
-      <option value="femenino">Femenino</option>
-      <option value="otro">Otro</option>
-
       <option value="argentina">Argentina</option>
       <option value="chile">Chile</option>
       <option value="mexico">México</option>
@@ -214,6 +206,15 @@
       <option value="costa_rica">Costa Rica</option>
       <option value="panama">Panamá</option>
     </select>
+    <-- campo de genero corregido -->
+    <label for="genero">Género:</label>
+    <select id="genero" name="genero" required>
+      <option value="">Seleccione...</option>
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+    </select>
+    
 
     <div class="acciones">
       <button type="submit" class="enviar">Enviar</button>

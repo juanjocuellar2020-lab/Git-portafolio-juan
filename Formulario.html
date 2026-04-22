@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario Integrado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .formulario {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 360px;
+      font-size: 15px;
+    }
+
+    .formulario h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .formulario label {
+      display: block;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .formulario input, .formulario select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .acciones {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .enviar {
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .estilos {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      width: 120px;
+    }
+
+    .colores {
+      display: flex;
+      gap: 10px;
+    }
+
+    .colores button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      border-radius: 0; /* cuadrados */
+    }
+
+    .lavanda { background-color: #b57edc; }
+    .menta   { background-color: #98ff98; }
+    .ceruleo { background-color: #1e90ff; }
+    .rosa    { background-color: pink; }
+
+    /* Botón Victoriano rectangular */
+    .victoriano {
+      background-color: #8b6f47;
+      color: #fff;
+      width: 100%;
+      height: 35px;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    /* Botón Alto Contraste */
+    .contraste {
+      background-color: #000000;
+      color: #ffffff;
+      width: 100%;
+      height: 35px;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+
+    /* Estilos alternativos */
+    .formulario.lavanda {
+      background-color: #f3e8ff;
+      border: 2px solid #b57edc;
+    }
+
+    .formulario.menta {
+      background-color: #eaffea;
+      border: 2px solid #98ff98;
+    }
+
+    .formulario.ceruleo {
+      background-color: #e6f0ff;
+      border: 2px solid #1e90ff;
+    }
+
+    .formulario.rosa {
+      background-color: #ffe6f0;
+      border: 2px solid pink;
+    }
+
+    /* Estilo alto contraste mejorado */
+    .formulario.alto-contraste {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 17px;
+    }
+
+    .formulario.alto-contraste h2,
+    .formulario.alto-contraste label {
+      color: #ffffff;
+    }
+
+    .formulario.alto-contraste input,
+    .formulario.alto-contraste select {
+      background-color: #1a1a1a;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      font-size: 16px;
+      font-family: Verdana, Geneva, sans-serif;
+    }
+
+    .formulario.victoriano-estilo {
+      background-color: #f5f0e6;
+      border: 3px double #8b6f47;
+      font-family: "Times New Roman", serif;
+      font-style: italic;
+      color: #4a3c2a;
+    }
+
+    .formulario.victoriano-estilo input,
+    .formulario.victoriano-estilo select {
+      font-family: "Times New Roman", serif;
+      font-style: italic;
+      color: #4a3c2a;
+      border: 2px solid #8b6f47;
+    }
+  </style>
+</head>
+<body>
+  <form class="formulario" id="formulario">
+    <h2>Datos Personales</h2>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="fecha">Fecha de nacimiento:</label>
+    <input type="date" id="fecha" name="fecha" min="1900-01-01" max="2026-12-31" required>
+
+    <label for="pais">País de residencia:</label>
+    <select id="pais" name="pais" required>
+      <option value="">Seleccione...</option>
+      <option value="argentina">Argentina</option>
+      <option value="chile">Chile</option>
+      <option value="mexico">México</option>
+      <option value="espana">España</option>
+      <option value="peru">Perú</option>
+      <option value="colombia">Colombia</option>
+      <option value="uruguay">Uruguay</option>
+      <option value="bolivia">Bolivia</option>
+      <option value="ecuador">Ecuador</option>
+      <option value="venezuela">Venezuela</option>
+      <option value="paraguay">Paraguay</option>
+      <option value="costa_rica">Costa Rica</option>
+      <option value="panama">Panamá</option>
+    </select>
+
+    <div class="acciones">
+      <button type="submit" class="enviar">Enviar</button>
+      <div class="estilos">
+        <div class="colores">
+          <button type="button" class="lavanda" title="Lavanda" onclick="setEstilo('lavanda')"></button>
+          <button type="button" class="menta" title="Menta" onclick="setEstilo('menta')"></button>
+          <button type="button" class="ceruleo" title="Cerúleo" onclick="setEstilo('ceruleo')"></button>
+          <button type="button" class="rosa" title="Rosa" onclick="setEstilo('rosa')"></button>
+        </div>
+        <button type="button" class="contraste" onclick="setContraste()">Alto Contraste</button>
+        <button type="button" class="victoriano" onclick="setVictoriano()">Victoriano</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+
+    function setEstilo(color) {
+      formulario.className = "formulario " + color;
+    }
+
+    function setContraste() {
+      formulario.className = "formulario alto-contraste";
+    }
+
+    function setVictoriano() {
+      formulario.className = "formulario victoriano-estilo";
+    }
+
+    formulario.addEventListener("submit", function(event) {
+      if (!formulario.checkValidity()) {
+        event.preventDefault();
+        alert("Por favor complete todos los campos correctamente.");
+      }
+    });
+  </script>
+</body>
+</html>
